@@ -1,0 +1,21 @@
+type UserClickEvent {
+    id: String
+    sessionId: String
+    country: String
+    browserName: String
+    url: String
+    date: String
+}
+
+schema {
+query: ElasticSearchServiceImpl
+}
+
+type ElasticSearchServiceImpl {
+    usersQuantityForYesterday : [UserClickEvent]
+    usersQuantityForToday : [UserClickEvent]
+    usersQuantityForWeek : [UserClickEvent]
+    usersQuantityForMonth : [UserClickEvent]
+    yesterdayUsersFromCountry(country: String!) : [UserClickEvent]
+    yesterdayUsersBrowser(browser: String!) : [UserClickEvent]
+}
