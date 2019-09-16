@@ -1,4 +1,4 @@
-index: event
+index: events
 elasticsearchHome: searchHome
 clusterName: clusterElastic
 host: localhost

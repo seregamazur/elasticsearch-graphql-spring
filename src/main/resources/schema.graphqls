@@ -1,10 +1,12 @@
+scalar LocalDateTime
+
 type UserClickEvent {
-    id: String
-    sessionId: String
-    country: String
-    browserName: String
-    url: String
-    date: String
+    id: ID!
+    sessionId: ID!
+    country: String!
+    browser: String!
+    url: String!
+    date: LocalDateTime!
 }
 
 schema {
@@ -16,6 +18,6 @@ type ElasticSearchServiceImpl {
     usersQuantityForToday : [UserClickEvent]
     usersQuantityForWeek : [UserClickEvent]
     usersQuantityForMonth : [UserClickEvent]
-    yesterdayUsersFromCountry(country: String!) : [UserClickEvent]
+    yesterdayUsersCountry(country: String!) : [UserClickEvent]
     yesterdayUsersBrowser(browser: String!) : [UserClickEvent]
 }

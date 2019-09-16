@@ -10,7 +10,7 @@ public class UserClickEvent {
     private String id;
     private String sessionId;
     private String country;
-    private String browserName;
+    private String browser;
     private String url;
     private LocalDateTime date;
 
@@ -18,11 +18,11 @@ public class UserClickEvent {
     }
 
     public UserClickEvent(String id, String sessionId, String country,
-                          String browserName, String url, LocalDateTime date) {
+                          String browser, String url, LocalDateTime date) {
         this.id = id;
         this.sessionId = sessionId;
         this.country = country;
-        this.browserName = browserName;
+        this.browser = browser;
         this.url = url;
         this.date = date;
     }
@@ -43,12 +43,12 @@ public class UserClickEvent {
         this.country = country;
     }
 
-    public String getBrowserName() {
-        return browserName;
+    public String getBrowser() {
+        return browser;
     }
 
     public void setBrowser(String browserName) {
-        this.browserName = browserName;
+        this.browser = browserName;
     }
 
     public String getUrl() {
@@ -80,7 +80,7 @@ public class UserClickEvent {
         return MoreObjects.toStringHelper(this)
                 .add("sessionId", sessionId)
                 .add("country", country)
-                .add("browser", browserName)
+                .add("browser", browser)
                 .add("url", url)
                 .add("date", date)
                 .toString();
@@ -93,13 +93,13 @@ public class UserClickEvent {
         UserClickEvent that = (UserClickEvent) o;
         return Objects.equals(sessionId, that.sessionId) &&
                 Objects.equals(country, that.country) &&
-                browserName == that.browserName &&
+                browser == that.browser &&
                 Objects.equals(url, that.url) &&
                 Objects.equals(date, that.date);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(sessionId, country, browserName, url, date);
+        return Objects.hash(sessionId, country, browser, url, date);
     }
 }

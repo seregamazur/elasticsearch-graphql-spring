@@ -15,8 +15,8 @@ public interface ElasticSearchService {
 
     List<UserClickEvent> usersQuantityForMonth() throws IOException;
 
-    List<UserClickEvent> yesterdayUsersFromCountry(String country) throws IOException;
+    List<UserClickEvent> yesterdayUsersCountry(String country) throws IOException;
 
-    List<UserClickEvent> yesterdayUsersBrowser(String browserName) throws IOException;
+    List<UserClickEvent> yesterdayUsersBrowser(String browser) throws IOException;
 
 }
